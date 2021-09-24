@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
-import {Marca} from './marca.model';
-import {Categoria} from './categoria.model';
+import {belongsTo, Entity, hasMany, model, property} from '@loopback/repository';
 import {CategoriaVehiculo} from './categoria-vehiculo.model';
+import {Categoria} from './categoria.model';
 import {Foto} from './foto.model';
+import {Marca} from './marca.model';
 import {Proveedor} from './proveedor.model';
 
 @model({
@@ -84,7 +84,7 @@ export class Vehiculo extends Entity {
   fotos: Foto[];
 
   @belongsTo(() => Proveedor, {name: 'proveedor'})
-  id_proveedor: number; 
+  id_proveedor: number;
 
   constructor(data?: Partial<Vehiculo>) {
     super(data);
